@@ -1,7 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
+ * React Native Sample App
  * @format
  * @flow
  */
@@ -22,7 +20,7 @@ import {
   Colors,
   DebugInstructions,
   ReloadInstructions,
-} from './Screens/Main';
+} from './screens/main';
 
 const App: () => React$Node = () => {
   return (
