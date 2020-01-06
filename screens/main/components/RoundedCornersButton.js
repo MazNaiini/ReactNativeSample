@@ -1,5 +1,5 @@
 /**
- * Colors Component
+ * RoundedCornerButton Component
  * @flow
  * @format
  */

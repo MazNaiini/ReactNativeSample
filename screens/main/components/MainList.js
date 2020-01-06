@@ -1,5 +1,5 @@
 /**
- * Colors Component
+ * MainList Component
  * @flow
  * @format
  */

@@ -1,5 +1,5 @@
 /**
- * Colors Component
+ * Separator Component
  * @flow
  * @format
  */
