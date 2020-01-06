@@ -12,6 +12,9 @@ export default {
   lighter: '#F3F3F3',
   light: '#DAE1E7',
   dark: '#444',
+  gray: '#808080',
   black: '#000',
-  red: '#ff0000'
+  red: '#ff0000',
+  green: '#01aa30',
+  skyBlue: '#87ceeb',
 };
