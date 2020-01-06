@@ -27,11 +27,16 @@ export default class MainList extends React.Component {
             <RoundedCornerButton
               title="List from a locally stored JSON"
               backgroundColor={Colors.green}
+              height={180}
             />
-            <Separator />
+            <Separator height={20} />
             <RoundedCornerButton
               title="List from a network API provider JSON"
               backgroundColor={Colors.skyBlue}
+              height={180}
+              onPress={() => {
+                console.log('From list');
+              }}
             />
           </ScrollView>
         </SafeAreaView>

@@ -7,16 +7,16 @@
 'use strict';
 
 import React from 'react';
-import View from 'react-native';
+import {View} from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class Separator extends React.Component {
   render() {
-    return (
-        <View />
-    ) ;
+    const height = this.props.height ?? 10;
+    return <View style={{height: height}} />;
   }
 }
+
 Separator.propTypes = {
   height: PropTypes.number,
 };

@@ -8,7 +8,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Colors from './Colors';
 
 export default class RoundedCornerButton extends React.Component {
@@ -16,7 +16,7 @@ export default class RoundedCornerButton extends React.Component {
     const styles = StyleSheet.create({
       container: {
         flex: 1,
-        height: 100,
+        height: this.props.height ?? 100,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 5,
@@ -26,14 +26,18 @@ export default class RoundedCornerButton extends React.Component {
         backgroundColor: this.props.backgroundColor,
       },
       text: {
-        fontSize: 17,
+        fontSize: 20,
       },
     });
-
+    const defaultOnPress = () => {
+      console.log('test');
+    };
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={this.props.onPress ?? defaultOnPress}>
         <Text style={styles.text}>{this.props.title}</Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -41,4 +45,6 @@ export default class RoundedCornerButton extends React.Component {
 RoundedCornerButton.propTypes = {
   title: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
+  height: PropTypes.number,
+  onPress: PropTypes.function,
 };
