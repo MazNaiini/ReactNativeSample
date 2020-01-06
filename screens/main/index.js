@@ -10,6 +10,6 @@
 
 'use strict';
 
-import Colors from './components/Colors';
+import MainList from './components/MainList';
 
-export {Colors};
+export {MainList};
