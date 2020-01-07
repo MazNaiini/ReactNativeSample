@@ -8,7 +8,6 @@
 
 import React from 'react';
 import {View} from 'react-native';
-import PropTypes from 'prop-types';
 
 export default class Separator extends React.Component {
   render() {
@@ -16,7 +15,3 @@ export default class Separator extends React.Component {
     return <View style={{height: height}} />;
   }
 }
-
-Separator.propTypes = {
-  height: PropTypes.number,
-};

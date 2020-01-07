@@ -7,30 +7,14 @@
 'use strict';
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Colors from './Colors';
 
 export default class RoundedCornerButton extends React.Component {
   render() {
-    const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        height: this.props.height ?? 100,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 5,
-        shadowColor: Colors.dark,
-        shadowOpacity: 1,
-        shadowOffset: {width: 1, height: 1},
-        backgroundColor: this.props.backgroundColor,
-      },
-      text: {
-        fontSize: 20,
-      },
-    });
+    const styles = this.getStyles()
     const defaultOnPress = () => {
-      console.log('test');
+      console.log('default onPress declaration');
     };
     return (
       <TouchableOpacity
@@ -40,11 +24,24 @@ export default class RoundedCornerButton extends React.Component {
       </TouchableOpacity>
     );
   }
-}
 
-RoundedCornerButton.propTypes = {
-  title: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
-  height: PropTypes.number,
-  onPress: PropTypes.function,
-};
+  getStyles() {
+    return StyleSheet.create({
+      container: {
+        flex: 1,
+        height: this.props.height ?? 200,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        shadowColor: Colors.dark,
+        shadowOpacity: 1,
+        shadowOffset: {width: 1, height: 1},
+        backgroundColor: this.props.backgroundColor ?? Colors.white,
+      },
+      text: {
+        fontSize: 20,
+      },
+    });
+  }
+
+}
