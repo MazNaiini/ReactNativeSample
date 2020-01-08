@@ -13,6 +13,9 @@
     "flow": "^0.2.3",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.3",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^2.0.12",
     "typescript": "^3.7.4"
   },
   "devDependencies": {
