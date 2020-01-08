@@ -13,6 +13,9 @@ import RoundedCornerButton from './RoundedCornersButton';
 import Separator from './Separator';
 
 export default class MainList extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome!',
+  };
   render() {
     return (
       <>
