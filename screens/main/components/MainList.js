@@ -50,7 +50,8 @@ export default class MainList extends React.Component {
               backgroundColor={Colors.skyBlue}
               height={180}
               onPress={() => {
-                console.log('From list');
+                const navigation = this.props.navigation;
+                navigation.navigate('APIFetchedList');
               }}
             />
           </ScrollView>
