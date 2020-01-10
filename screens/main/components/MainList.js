@@ -31,6 +31,10 @@ export default class MainList extends React.Component {
               title="List from a locally stored JSON"
               backgroundColor={Colors.green}
               height={180}
+              onPress={() => {
+                const navigation = this.props.navigation;
+                navigation.navigate('LocallyLoadedList');
+              }}
             />
             <Separator height={20} />
             <RoundedCornerButton
