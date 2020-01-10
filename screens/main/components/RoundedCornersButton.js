@@ -12,7 +12,7 @@ import Colors from './Colors';
 
 export default class RoundedCornerButton extends React.Component {
   render() {
-    const styles = this.getStyles()
+    const styles = this.getStyles();
     return (
       <TouchableOpacity
         style={styles.container}
@@ -40,7 +40,6 @@ export default class RoundedCornerButton extends React.Component {
       },
     });
   }
-
 }
 
 const defaultOnPress = () => {
