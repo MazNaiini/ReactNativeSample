@@ -7,7 +7,14 @@
 'use strict';
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, ScrollView, Text} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+  ScrollView,
+  Text,
+} from 'react-native';
 import Colors from './Colors';
 import RoundedCornerButton from './RoundedCornersButton';
 import Separator from './Separator';
@@ -20,6 +27,7 @@ export default class MainList extends React.Component {
     return (
       <>
         <SafeAreaView style={styles.safeAreaView}>
+          <StatusBar barStyle="dark-content" />
           <ScrollView style={styles.scrollView}>
             <View>
               <Text style={styles.sectionHeaderText}>

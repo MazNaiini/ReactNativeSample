@@ -7,7 +7,7 @@
 'use strict';
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, View, Text} from 'react-native';
 
 class LocallyStoredList extends React.Component {
   static navigationOptions = {
@@ -18,6 +18,7 @@ class LocallyStoredList extends React.Component {
     return (
       <>
         <SafeAreaView style={styles.safeAreaView}>
+          <StatusBar barStyle="dark-content" />
           <View>
             <Text style={styles.sectionHeaderText}>
               A list loaded from a locally stored JSON
