@@ -5,9 +5,9 @@
  */
 
 // import React from 'react';
-import {MainList} from './screens/main';
-import {LocallyStoredList} from './screens/locallyStoredList';
-import {APIFetchedList} from './screens/apiFetchedList';
+import {MainList} from './src/screens/main';
+import {LocallyStoredList} from './src/screens/locallyStoredList';
+import {APIFetchedList} from './src/screens/apiFetchedList';
 
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
