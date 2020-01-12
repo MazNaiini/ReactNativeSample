@@ -15,7 +15,7 @@ import {
   ScrollView,
   Text,
 } from 'react-native';
-import Colors from './Colors';
+import Colors from '_styles/colors';
 import RoundedCornerButton from './RoundedCornersButton';
 import Separator from './Separator';
 
