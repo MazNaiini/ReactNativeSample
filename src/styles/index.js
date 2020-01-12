@@ -5,6 +5,6 @@
  */
 'use strict';
 
- import * as Colors from './colors';
+ import Colors from './colors';
 
  export {Colors};
