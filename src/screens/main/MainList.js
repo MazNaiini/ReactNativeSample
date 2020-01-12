@@ -15,9 +15,9 @@ import {
   ScrollView,
   Text,
 } from 'react-native';
-import Colors from 'styles/colors';
-import RoundedCornerButton from 'components/RoundedCornersButton';
-import Separator from 'components/Separator';
+import Colors from '_styles/colors';
+import RoundedCornerButton from '_components/RoundedCornersButton';
+import Separator from '_components/Separator';
 
 export default class MainList extends React.Component {
   static navigationOptions = {

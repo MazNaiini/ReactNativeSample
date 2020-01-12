@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Colors from 'styles/colors';
+import Colors from '_styles/colors';
 
 export default class RoundedCornerButton extends React.Component {
   render() {
