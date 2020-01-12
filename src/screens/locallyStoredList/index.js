@@ -6,6 +6,6 @@
 
 'use strict';
 
-import LocallyStoredList from './components/List';
+import LocallyStoredList from './LocallyStoredList';
 
 export {LocallyStoredList};

@@ -6,6 +6,6 @@
 
 'use strict';
 
-import MainStackNavigator from '_navigations/MainStackNavigator';
+import MainStackNavigator from './mainStackNavigator';
 
 export {MainStackNavigator};

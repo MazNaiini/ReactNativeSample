@@ -6,6 +6,6 @@
 
 'use strict';
 
-import APIFetchedList from './components/List';
+import APIFetchedList from './APIFetchedList';
 
 export {APIFetchedList};

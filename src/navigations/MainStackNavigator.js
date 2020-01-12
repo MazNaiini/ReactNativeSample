@@ -4,9 +4,9 @@
  * @flow
  */
 
-import {MainList} from '_screens/main';
-import {LocallyStoredList} from '_screens/locallyStoredList';
-import {APIFetchedList} from '_screens/apiFetchedList';
+import {MainList} from 'screens/main';
+import {LocallyStoredList} from 'screens/locallyStoredList';
+import {APIFetchedList} from 'screens/apiFetchedList';
 import {createStackNavigator} from 'react-navigation-stack';
 
 const MainStackNavigator = createStackNavigator({

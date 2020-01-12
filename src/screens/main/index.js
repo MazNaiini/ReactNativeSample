@@ -6,6 +6,6 @@
 
 'use strict';
 
-import MainList from './components/MainList';
+import MainList from './MainList';
 
 export {MainList};
