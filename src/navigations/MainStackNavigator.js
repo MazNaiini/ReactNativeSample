@@ -3,6 +3,7 @@
  * @format
  * @flow
  */
+'use strict';
 
 import {MainList, LocallyStoredList, APIFetchedList} from 'screens';
 import {createStackNavigator} from 'react-navigation-stack';
