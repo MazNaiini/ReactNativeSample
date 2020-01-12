@@ -4,7 +4,7 @@
  * @flow
  */
 
-import MainNavigator from './MainNavigator';
+import MainNavigator from './src/MainNavigator';
 import {createAppContainer} from 'react-navigation';
 
 const App = createAppContainer(MainNavigator);
