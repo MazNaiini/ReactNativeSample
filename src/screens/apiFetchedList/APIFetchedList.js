@@ -16,7 +16,6 @@ class APIFetchedList extends React.Component {
   };
   render() {
     return (
-      <>
         <SafeAreaView style={styles.safeAreaView}>
           <StatusBar barStyle="dark-content" />
           <View>
@@ -25,7 +24,6 @@ class APIFetchedList extends React.Component {
             </Text>
           </View>
         </SafeAreaView>
-      </>
     );
   }
 }
