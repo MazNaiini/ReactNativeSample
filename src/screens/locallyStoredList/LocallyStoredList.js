@@ -14,6 +14,7 @@ import {
   View,
   Text,
   FlatList,
+  TouchableHighlight,
 } from 'react-native';
 import Colors from '_styles/colors';
 
@@ -43,8 +44,12 @@ class LocallyStoredList extends React.Component {
 function Item({title, body}) {
   return (
     <View>
-      <Text style={styles.itemTitle}> {title} </Text>
-      <Text style={styles.itemBody}> {body} </Text>
+      <TouchableHighlight>
+        <View>
+          <Text style={styles.itemTitle}> {title} </Text>
+          <Text style={styles.itemBody}> {body} </Text>
+        </View>
+      </TouchableHighlight>
       <Separator />
     </View>
   );
