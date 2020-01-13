@@ -7,7 +7,29 @@
 'use strict';
 
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, View, Text} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+} from 'react-native';
+
+const DATA = [
+  {
+    id: '1',
+    title: 'Item number one',
+  },
+  {
+    id: '2',
+    title: 'Item number two',
+  },
+  {
+    id: '3',
+    title: 'Item number three',
+  },
+];
 
 class LocallyStoredList extends React.Component {
   static navigationOptions = {
@@ -16,18 +38,22 @@ class LocallyStoredList extends React.Component {
   };
   render() {
     return (
-      <>
-        <SafeAreaView style={styles.safeAreaView}>
-          <StatusBar barStyle="dark-content" />
-          <View>
-            <Text style={styles.sectionHeaderText}>
-              A list loaded from a locally stored JSON
-            </Text>
-          </View>
-        </SafeAreaView>
-      </>
+      <SafeAreaView style={styles.safeAreaView}>
+        <StatusBar barStyle="dark-content" />
+        <FlatList
+          style={styles.flatListView}
+          data={DATA}
+          renderItem={({item}) => <Item title={item.title} />}
+          keyExtractor={item => item.id}
+        />
+        <View />
+      </SafeAreaView>
     );
   }
+}
+
+function Item({title}) {
+  return <Text style={styles.itemText}> {title} </Text>;
 }
 
 const styles = StyleSheet.create({
@@ -35,15 +61,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  scrollView: {
+  flatListView: {
     paddingTop: 24,
-    paddingLeft: 24,
-    paddingRight: 24,
   },
-  sectionHeaderText: {
+  itemText: {
     fontSize: 17,
     textAlign: 'center',
     paddingBottom: 8,
+    paddingTop: 8,
+    paddingRight: 24,
+    paddingLeft: 24,
   },
   separator: {
     height: 8,
