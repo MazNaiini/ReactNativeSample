@@ -15,6 +15,7 @@ import {
   Text,
   FlatList,
 } from 'react-native';
+import Colors from '_styles/colors';
 
 const DATA = require('_assets/data/mocked.json');
 
@@ -44,8 +45,13 @@ function Item({title, body}) {
     <View>
       <Text style={styles.itemTitle}> {title} </Text>
       <Text style={styles.itemBody}> {body} </Text>
+      <Separator />
     </View>
   );
+}
+
+function Separator() {
+  return <View style={styles.separator} />;
 }
 
 const styles = StyleSheet.create({
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   flatListView: {
-    paddingTop: 24,
+    paddingTop: 8,
   },
   itemTitle: {
     fontSize: 17,
@@ -62,13 +68,19 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingTop: 8,
     paddingRight: 24,
-    paddingLeft: 24,
+    paddingLeft: 16,
   },
   itemBody: {
-    fontSize: 14,
-    textAlign: 'justify',
-    paddingRight: 24,
-    paddingLeft: 24,
+    fontSize: 12,
+    textAlign: 'left',
+    paddingRight: 16,
+    paddingLeft: 16,
+    paddingBottom: 8,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: Colors.light,
+    marginLeft: 16,
   },
 });
 
