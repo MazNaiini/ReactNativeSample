@@ -16,14 +16,14 @@ class APIFetchedList extends React.Component {
   };
   render() {
     return (
-        <SafeAreaView style={styles.safeAreaView}>
-          <StatusBar barStyle="dark-content" />
-          <View>
-            <Text style={styles.sectionHeaderText}>
-              A list loaded from network API
-            </Text>
-          </View>
-        </SafeAreaView>
+      <SafeAreaView style={styles.safeAreaView}>
+        <StatusBar barStyle="dark-content" />
+        <View>
+          <Text style={styles.sectionHeaderText}>
+            A list loaded from network API
+          </Text>
+        </View>
+      </SafeAreaView>
     );
   }
 }

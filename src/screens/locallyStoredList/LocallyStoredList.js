@@ -16,20 +16,7 @@ import {
   FlatList,
 } from 'react-native';
 
-const DATA = [
-  {
-    id: '1',
-    title: 'Item number one',
-  },
-  {
-    id: '2',
-    title: 'Item number two',
-  },
-  {
-    id: '3',
-    title: 'Item number three',
-  },
-];
+const DATA = require('_assets/data/mocked.json');
 
 class LocallyStoredList extends React.Component {
   static navigationOptions = {
@@ -43,8 +30,8 @@ class LocallyStoredList extends React.Component {
         <FlatList
           style={styles.flatListView}
           data={DATA}
-          renderItem={({item}) => <Item title={item.title} />}
-          keyExtractor={item => item.id}
+          renderItem={({item}) => <Item title={item.title} body={item.body} />}
+          keyExtractor={item => item.id.toString()}
         />
         <View />
       </SafeAreaView>
@@ -52,8 +39,13 @@ class LocallyStoredList extends React.Component {
   }
 }
 
-function Item({title}) {
-  return <Text style={styles.itemText}> {title} </Text>;
+function Item({title, body}) {
+  return (
+    <View>
+      <Text style={styles.itemTitle}> {title} </Text>
+      <Text style={styles.itemBody}> {body} </Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -64,16 +56,19 @@ const styles = StyleSheet.create({
   flatListView: {
     paddingTop: 24,
   },
-  itemText: {
+  itemTitle: {
     fontSize: 17,
-    textAlign: 'center',
+    textAlign: 'left',
     paddingBottom: 8,
     paddingTop: 8,
     paddingRight: 24,
     paddingLeft: 24,
   },
-  separator: {
-    height: 8,
+  itemBody: {
+    fontSize: 14,
+    textAlign: 'justify',
+    paddingRight: 24,
+    paddingLeft: 24,
   },
 });
 
