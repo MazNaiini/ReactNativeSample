@@ -25,6 +25,7 @@ class LocallyStoredList extends React.Component {
     title: 'List From Locally Stored JSON',
     headerBackTitle: ' ',
   };
+
   render() {
     return (
       <SafeAreaView style={styles.safeAreaView}>
@@ -32,31 +33,42 @@ class LocallyStoredList extends React.Component {
         <FlatList
           style={styles.flatListView}
           data={DATA}
-          renderItem={({item}) => <Item title={item.title} body={item.body} />}
+          header
+          ListHeaderComponent={this.renderHeader}
+          renderItem={this.renderItem}
+          ItemSeparatorComponent={this.renderSeparator}
           keyExtractor={item => item.id.toString()}
+          ListFooterComponent={this.renderFooter}
         />
         <View />
       </SafeAreaView>
     );
   }
-}
 
-function Item({title, body}) {
-  return (
-    <View>
+  renderHeader = () => {
+    const style = {textAlign: 'center', padding: 8};
+    return <Text style={style}>Header</Text>;
+  };
+
+  renderItem = ({item, index, separator}) => {
+    return (
       <TouchableHighlight>
         <View>
-          <Text style={styles.itemTitle}> {title} </Text>
-          <Text style={styles.itemBody}> {body} </Text>
+          <Text style={styles.itemTitle}>{item.title}</Text>
+          <Text style={styles.itemBody}>{item.body}</Text>
         </View>
       </TouchableHighlight>
-      <Separator />
-    </View>
-  );
-}
+    );
+  };
 
-function Separator() {
-  return <View style={styles.separator} />;
+  renderSeparator = () => {
+    return <View style={styles.separator} />;
+  };
+
+  renderFooter = () => {
+    const style = {textAlign: 'center', padding: 8};
+    return <Text style={style}>Footer</Text>;
+  };
 }
 
 const styles = StyleSheet.create({
@@ -66,6 +78,7 @@ const styles = StyleSheet.create({
   },
   flatListView: {
     paddingTop: 8,
+    paddingBottom: 8,
   },
   itemTitle: {
     fontSize: 17,

@@ -37,6 +37,7 @@ export default class RoundedCornerButton extends React.Component {
       },
       text: {
         fontSize: 20,
+        textAlign: 'center',
       },
     });
   }
