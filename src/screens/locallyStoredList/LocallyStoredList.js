@@ -14,9 +14,10 @@ import {
   View,
   Text,
   FlatList,
+  Platform,
 } from 'react-native';
 import Colors from '_styles/colors';
-import {ListItem} from 'react-native-elements';
+import {ListItem, SearchBar} from 'react-native-elements';
 
 const DATA = require('_assets/data/mocked.json');
 
@@ -24,6 +25,10 @@ class LocallyStoredList extends React.Component {
   static navigationOptions = {
     title: 'List From Locally Stored JSON',
     headerBackTitle: ' ',
+  };
+
+  state = {
+    search: '',
   };
 
   render() {
@@ -43,9 +48,23 @@ class LocallyStoredList extends React.Component {
     );
   }
 
+  filteredData() {
+    return DATA;
+  }
+
   renderHeader = () => {
-    const style = {textAlign: 'center', padding: 8};
-    return <Text style={style}>Header</Text>;
+    return (
+      <SearchBar
+        platform={Platform.OS}
+        placeholder={'Search here'}
+        onChangeText={this.updateSearch}
+        value={this.state.search}
+      />
+    );
+  };
+
+  updateSearch = search => {
+    this.setState({search});
   };
 
   renderItem = ({item, index, separator}) => {
