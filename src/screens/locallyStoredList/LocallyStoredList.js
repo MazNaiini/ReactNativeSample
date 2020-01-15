@@ -49,7 +49,29 @@ class LocallyStoredList extends React.Component {
   };
 
   renderItem = ({item, index, separator}) => {
-    return <ListItem title={item.title} subtitle={item.body} chevron />;
+    return (
+      <ListItem
+        title={
+          <Text style={styles.itemTitle} numberOfLines={1}>
+            {item.title}
+          </Text>
+        }
+        subtitle={
+          <Text style={styles.itemBody} numberOfLines={2}>
+            {item.body}
+          </Text>
+        }
+        onPress={() => {
+          const navigation = this.props.navigation;
+          const params = {
+            title: item.title,
+            body: item.body,
+          };
+          navigation.navigate('Detail', params);
+        }}
+        chevron
+      />
+    );
   };
 
   renderSeparator = () => {
@@ -73,23 +95,13 @@ const styles = StyleSheet.create({
   },
   itemTitle: {
     fontSize: 17,
-    textAlign: 'left',
-    paddingBottom: 8,
-    paddingTop: 8,
-    paddingRight: 24,
-    paddingLeft: 16,
   },
   itemBody: {
     fontSize: 12,
-    textAlign: 'justify',
-    paddingRight: 16,
-    paddingLeft: 16,
-    paddingBottom: 8,
   },
   separator: {
     height: 1,
     backgroundColor: Colors.light,
-    marginLeft: 16,
   },
 });
 

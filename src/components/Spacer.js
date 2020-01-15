@@ -1,5 +1,5 @@
 /**
- * Separator Component
+ * Spacer Component
  * @flow
  * @format
  */
@@ -9,7 +9,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-export default class Separator extends React.Component {
+export default class Spacer extends React.Component {
   render() {
     const height = this.props.height ?? defaultHeight;
     return <View style={{height: height}} />;

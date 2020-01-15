@@ -6,6 +6,6 @@
 'use strict';
 
 import RoundedCornersButton from './RoundedCornersButton';
-import Separator from './Separator';
+import Spacer from './Spacer';
 
-export {RoundedCornersButton, Separator};
+export {RoundedCornersButton, Spacer};

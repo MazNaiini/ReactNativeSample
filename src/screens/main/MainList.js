@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import Colors from '_styles/colors';
 import RoundedCornerButton from '_components/RoundedCornersButton';
-import Separator from '_components/Separator';
+import Spacer from '_components/Spacer';
 
 export default class MainList extends React.Component {
   static navigationOptions = {
@@ -34,7 +34,7 @@ export default class MainList extends React.Component {
                 List / Detail examples
               </Text>
             </View>
-            <Separator />
+            <Spacer />
             <RoundedCornerButton
               title="List from a locally stored JSON"
               backgroundColor={Colors.green}
@@ -44,7 +44,7 @@ export default class MainList extends React.Component {
                 navigation.navigate('LocallyLoadedList');
               }}
             />
-            <Separator height={20} />
+            <Spacer height={20} />
             <RoundedCornerButton
               title="List from a network API provider JSON"
               backgroundColor={Colors.skyBlue}
