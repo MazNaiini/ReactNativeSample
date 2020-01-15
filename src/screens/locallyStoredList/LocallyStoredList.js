@@ -14,9 +14,9 @@ import {
   View,
   Text,
   FlatList,
-  TouchableHighlight,
 } from 'react-native';
 import Colors from '_styles/colors';
+import {ListItem} from 'react-native-elements';
 
 const DATA = require('_assets/data/mocked.json');
 
@@ -49,18 +49,7 @@ class LocallyStoredList extends React.Component {
   };
 
   renderItem = ({item, index, separator}) => {
-    return (
-      <TouchableHighlight>
-        <View>
-          <Text style={styles.itemTitle} numberOfLines={1}>
-            {item.title}
-          </Text>
-          <Text style={styles.itemBody} numberOfLines={2}>
-            {item.body}
-          </Text>
-        </View>
-      </TouchableHighlight>
-    );
+    return <ListItem title={item.title} subtitle={item.body} chevron />;
   };
 
   renderSeparator = () => {
