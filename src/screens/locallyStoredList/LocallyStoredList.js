@@ -33,14 +33,12 @@ class LocallyStoredList extends React.Component {
         <FlatList
           style={styles.flatListView}
           data={DATA}
-          header
           ListHeaderComponent={this.renderHeader}
           renderItem={this.renderItem}
           ItemSeparatorComponent={this.renderSeparator}
           keyExtractor={item => item.id.toString()}
           ListFooterComponent={this.renderFooter}
         />
-        <View />
       </SafeAreaView>
     );
   }
@@ -54,8 +52,12 @@ class LocallyStoredList extends React.Component {
     return (
       <TouchableHighlight>
         <View>
-          <Text style={styles.itemTitle}>{item.title}</Text>
-          <Text style={styles.itemBody}>{item.body}</Text>
+          <Text style={styles.itemTitle} numberOfLines={1}>
+            {item.title}
+          </Text>
+          <Text style={styles.itemBody} numberOfLines={2}>
+            {item.body}
+          </Text>
         </View>
       </TouchableHighlight>
     );
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
   },
   itemBody: {
     fontSize: 12,
-    textAlign: 'left',
+    textAlign: 'justify',
     paddingRight: 16,
     paddingLeft: 16,
     paddingBottom: 8,
