@@ -31,8 +31,8 @@ class DetailView extends React.Component {
 
   renderContent() {
     const params = this.props.navigation.state.params;
-    const title = params.title ?? 'No title';
-    const body = params.body ?? 'No body text';
+    const title = params.title ?? '';
+    const body = params.body ?? '';
     const image = require('_assets/images/logo.png');
     return (
       <>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     paddingRight: 24,
   },
   bodyText: {
-    fontSize: 50,
+    fontSize: 30,
     textAlign: 'center',
     paddingLeft: 16,
     paddingRight: 16,

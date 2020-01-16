@@ -15,6 +15,8 @@ import {
   ScrollView,
   Text,
 } from 'react-native';
+import {Button} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '_styles/colors';
 import RoundedCornerButton from '_components/RoundedCornersButton';
 import Spacer from '_components/Spacer';
@@ -55,6 +57,10 @@ export default class MainList extends React.Component {
               }}
             />
           </ScrollView>
+          <Button
+            style={styles.floatingInfoButton}
+            icon={<Icon raised={true} name="info" size={50} color="white" />}
+          />
         </SafeAreaView>
       </>
     );
@@ -78,5 +84,14 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 8,
+  },
+  floatingInfoButton: {
+    position: 'absolute',
+    width: 70,
+    height: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 24,
+    bottom: 30,
   },
 });
