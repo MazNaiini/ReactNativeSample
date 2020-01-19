@@ -60,6 +60,7 @@ export default class MainList extends React.Component {
           <Button
             style={styles.floatingInfoButton}
             icon={<Icon raised={true} name="info" size={50} color="white" />}
+            onPress={() => this.props.navigation.navigate('ModalAboutScreen')}
           />
         </SafeAreaView>
       </>

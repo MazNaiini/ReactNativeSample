@@ -4,9 +4,9 @@
  * @flow
  */
 
-import MainStackNavigator from './navigations/mainStackNavigator';
+import RootStackNavigator from './navigations/rootStackNavigator';
 import {createAppContainer} from 'react-navigation';
 
-const App = createAppContainer(MainStackNavigator);
+const App = createAppContainer(RootStackNavigator);
 
 export default App;
