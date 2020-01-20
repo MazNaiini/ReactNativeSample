@@ -19,17 +19,32 @@ import {
 import Colors from '_styles/colors';
 import {ListItem, SearchBar} from 'react-native-elements';
 
-const DATA = require('_assets/data/mocked.json');
-
 class LocallyStoredList extends React.Component {
   static navigationOptions = {
     title: 'List From Locally Stored JSON',
     headerBackTitle: ' ',
   };
 
-  state = {
-    search: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: '',
+      data: [],
+    };
+    this.entitiesArray = [];
+  }
+
+  componentDidMount() {
+    this.initializeData();
+  }
+
+  initializeData() {
+    const DATA = require('_assets/data/mocked.json');
+    this.setState({
+      data: DATA,
+    });
+    this.entitiesArray = DATA;
+  }
 
   render() {
     return (
@@ -37,7 +52,7 @@ class LocallyStoredList extends React.Component {
         <StatusBar barStyle="dark-content" />
         <FlatList
           style={styles.flatListView}
-          data={DATA}
+          data={this.state.data}
           ListHeaderComponent={this.renderHeader}
           renderItem={this.renderItem}
           ItemSeparatorComponent={this.renderSeparator}
@@ -46,10 +61,6 @@ class LocallyStoredList extends React.Component {
         />
       </SafeAreaView>
     );
-  }
-
-  filteredData() {
-    return DATA;
   }
 
   renderHeader = () => {
@@ -64,10 +75,14 @@ class LocallyStoredList extends React.Component {
   };
 
   updateSearch = search => {
-    this.setState({search});
+    const filteredData = this.entitiesArray.filter(item => {
+      const itemString = item.title.toLowerCase() + item.body.toLowerCase();
+      return itemString.indexOf(search.toLowerCase()) >= 0;
+    });
+    this.setState({search, data: filteredData});
   };
 
-  renderItem = ({item, index, separator}) => {
+  renderItem = ({item}) => {
     return (
       <ListItem
         title={

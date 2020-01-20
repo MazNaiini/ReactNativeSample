@@ -16,7 +16,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 import Colors from '_styles/colors';
 import RoundedCornerButton from '_components/RoundedCornersButton';
 import Spacer from '_components/Spacer';
@@ -30,7 +30,7 @@ export default class MainList extends React.Component {
       <>
         <SafeAreaView style={styles.safeAreaView}>
           <StatusBar barStyle="dark-content" />
-          <ScrollView style={styles.scrollView}>
+          <ScrollView contentContainerStyle={styles.scrollView}>
             <View>
               <Text style={styles.sectionHeaderText}>
                 List / Detail examples
@@ -60,7 +60,7 @@ export default class MainList extends React.Component {
           <TouchableOpacity
             style={styles.floatingInfoButton}
             onPress={() => this.props.navigation.navigate('ModalAboutScreen')}>
-            <Icon raised={true} name="info" size={80} color={Colors.blue} />
+            <Icon name="info" size={80} color={Colors.white} />
           </TouchableOpacity>
         </SafeAreaView>
       </>
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
+    justifyContent: 'center',
     paddingTop: 24,
     paddingLeft: 24,
     paddingRight: 24,
@@ -87,12 +88,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 80,
     height: 80,
-    alignItems: 'center',
-    justifyContent: 'center',
     right: 24,
     bottom: 40,
-    shadowColor: Colors.black,
-    shadowOpacity: 0.4,
-    shadowOffset: {width: 0, height: 3},
+    borderRadius: 40,
+    backgroundColor: Colors.blue,
+    shadowColor: Colors.dark,
+    shadowOpacity: 0.6,
+    shadowOffset: {width: 1, height: 1},
   },
 });
