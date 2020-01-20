@@ -14,8 +14,9 @@ import {
   View,
   ScrollView,
   Text,
+  TouchableOpacity,
 } from 'react-native';
-import {Button} from 'react-native-elements';
+// import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '_styles/colors';
 import RoundedCornerButton from '_components/RoundedCornersButton';
@@ -57,11 +58,11 @@ export default class MainList extends React.Component {
               }}
             />
           </ScrollView>
-          <Button
+          <TouchableOpacity
             style={styles.floatingInfoButton}
-            icon={<Icon raised={true} name="info" size={50} color="white" />}
-            onPress={() => this.props.navigation.navigate('ModalAboutScreen')}
-          />
+            onPress={() => this.props.navigation.navigate('ModalAboutScreen')}>
+            <Icon raised={true} name="info" size={80} color={Colors.blue} />
+          </TouchableOpacity>
         </SafeAreaView>
       </>
     );
@@ -88,11 +89,15 @@ const styles = StyleSheet.create({
   },
   floatingInfoButton: {
     position: 'absolute',
-    width: 70,
-    height: 70,
+    width: 80,
+    height: 80,
     alignItems: 'center',
     justifyContent: 'center',
     right: 24,
-    bottom: 30,
+    bottom: 40,
+    borderRadius: 30,
+    shadowColor: Colors.black,
+    shadowOpacity: 0.4,
+    shadowOffset: {width: 0, height: 3},
   },
 });

@@ -16,4 +16,5 @@ export default {
   red: '#ff0000',
   green: '#01aa30',
   skyBlue: '#87ceeb',
+  blue: '#187bcd',
 };
