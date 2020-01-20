@@ -31,7 +31,7 @@ class LocallyStoredList extends React.Component {
       search: '',
       data: [],
     };
-    this.entitiesArray = [];
+    this.entitiesArray = require('_assets/data/mocked.json');
   }
 
   componentDidMount() {
@@ -39,11 +39,9 @@ class LocallyStoredList extends React.Component {
   }
 
   initializeData() {
-    const DATA = require('_assets/data/mocked.json');
     this.setState({
-      data: DATA,
+      data: this.entitiesArray,
     });
-    this.entitiesArray = DATA;
   }
 
   render() {
@@ -76,8 +74,11 @@ class LocallyStoredList extends React.Component {
 
   updateSearch = search => {
     const filteredData = this.entitiesArray.filter(item => {
-      const itemString = item.title.toLowerCase() + item.body.toLowerCase();
-      return itemString.indexOf(search.toLowerCase()) > -1;
+      const searchString = search.toLowerCase();
+      return (
+        item.title.toLowerCase().indexOf(searchString) >= 0 ||
+        item.body.toLowerCase().indexOf(searchString) >= 0
+      );
     });
     this.setState({search, data: filteredData});
   };
