@@ -48,7 +48,7 @@ class LocallyStoredList extends React.Component {
 
   render() {
     return (
-      <SafeAreaView style={styles.safeAreaView}>
+      <SafeAreaView>
         <StatusBar barStyle="dark-content" />
         <FlatList
           style={styles.flatListView}
@@ -77,7 +77,7 @@ class LocallyStoredList extends React.Component {
   updateSearch = search => {
     const filteredData = this.entitiesArray.filter(item => {
       const itemString = item.title.toLowerCase() + item.body.toLowerCase();
-      return itemString.indexOf(search.toLowerCase()) >= 0;
+      return itemString.indexOf(search.toLowerCase()) > -1;
     });
     this.setState({search, data: filteredData});
   };
@@ -119,13 +119,9 @@ class LocallyStoredList extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  safeAreaView: {
-    flex: 1,
-    justifyContent: 'center',
-  },
   flatListView: {
     paddingTop: 8,
-    paddingBottom: 8,
+    paddingBottom: 64,
   },
   itemTitle: {
     fontSize: 17,
