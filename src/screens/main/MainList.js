@@ -16,7 +16,6 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-// import {Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '_styles/colors';
 import RoundedCornerButton from '_components/RoundedCornersButton';
@@ -84,9 +83,6 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     color: Colors.gray,
   },
-  separator: {
-    height: 8,
-  },
   floatingInfoButton: {
     position: 'absolute',
     width: 80,
@@ -95,7 +91,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     right: 24,
     bottom: 40,
-    borderRadius: 30,
     shadowColor: Colors.black,
     shadowOpacity: 0.4,
     shadowOffset: {width: 0, height: 3},
