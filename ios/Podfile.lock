@@ -219,7 +219,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - RNCMaskedView (0.1.5):
+  - RNCMaskedView (0.1.6):
     - React
   - RNGestureHandler (1.5.3):
     - React
@@ -352,11 +352,11 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  RNCMaskedView: dd13f9f7b146a9ad82f9b7eb6c9b5548fcf6e990
+  RNCMaskedView: a88953beefbd347a29072d9eba90e42945fe291e
   RNGestureHandler: 02905abe54e1f6e59c081a10b4bd689721e17aa6
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 61487abe71059b02fbc90133b11498ef14a4443a
+PODFILE CHECKSUM: 8b0739a38d8d5ba7833c22905a907507732451e0
 
 COCOAPODS: 1.8.4
