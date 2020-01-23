@@ -15,6 +15,7 @@ import {
   Text,
   FlatList,
   Platform,
+  Image,
 } from 'react-native';
 import Colors from '_styles/colors';
 import {ListItem, SearchBar} from 'react-native-elements';
@@ -114,8 +115,17 @@ class LocallyStoredList extends React.Component {
   };
 
   renderFooter = () => {
-    const style = {textAlign: 'center', padding: 8};
-    return <Text style={style}>Footer</Text>;
+    const image = require('_assets/images/logo.png');
+    return (
+      <>
+        <Image
+          resizeMode={'contain'}
+          style={styles.footerImage}
+          source={image}
+        />
+        <Text style={styles.footerText}> Mana & Co AB</Text>
+      </>
+    );
   };
 }
 
@@ -133,6 +143,16 @@ const styles = StyleSheet.create({
   separator: {
     height: 1,
     backgroundColor: Colors.light,
+  },
+  footerImage: {
+    height: 56,
+    width: 56,
+    alignSelf: 'center',
+    paddingVertical: 56,
+  },
+  footerText: {
+    fontSize: 24,
+    alignSelf: 'center',
   },
 });
 
